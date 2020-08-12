@@ -1,6 +1,6 @@
-import React from "react";
-import s from "./MyPosts.module.css";
-import Post from "./Post/Post";
+import React from 'react';
+import s from './MyPosts.module.css';
+import Post from './Post/Post';
 
 const MyPosts = (props) => {
   let postsEl = props.posts.map((p) => (
@@ -10,13 +10,11 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let onAddPost = () => {
-    // props.dispatch(addPostActionCreator());
     props.onAddPost();
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    // props.dispatch(updateNewPostTextActionCreator(text));
     props.onPostChange(text);
   };
 
