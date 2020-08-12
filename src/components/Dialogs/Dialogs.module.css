@@ -1,0 +1,46 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr 1fr 2fr;
+
+  grid-template-areas:
+    "d m"
+    "d m"
+    "d ad";
+}
+
+.addmessage {
+  grid-area: ad;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-gap: 30px;
+  align-self: end;
+  justify-self: start;
+}
+
+.message {
+  grid-area: m;
+}
+
+.addmessage button {
+  border-radius: 10px;
+  border-color: cornflowerblue;
+  background-color: #65b8d5;
+  color: white;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: medium;
+  height: 40px;
+  align-self: end;
+  margin-bottom: 5px;
+}
+
+.addmessage textarea {
+  border-radius: 10px;
+  border-color: cornflowerblue;
+  resize: vertical;
+  min-height: 50px;
+  max-height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+}

@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+.app-wrapper {
+  margin: 0 auto;
+  display: grid;
+  margin-top: 10px;
+
+  width: 1200px;
+
+  grid-template-areas:
+    "h h"
+    "n c";
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.app-wrapper-content {
+  grid-area: c;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB)";
+  background: -webkit-linear-gradient(
+    top,
+    #0073d0,
+    rgb(32, 178, 117)
+  ); /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+  background: -moz-linear-gradient(
+    top,
+    #0073d0,
+    rgb(32, 178, 117)
+  ); /* Firefox 3.6-15 */
+  background: -o-linear-gradient(
+    left,
+    #0073d0,
+    rgb(32, 178, 117)
+  ); /* Opera 11.1-12 */
+  background: linear-gradient(to bottom, #0073d0, rgb(32, 178, 117));
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 15px 15px;
+  padding: 20px;
 }

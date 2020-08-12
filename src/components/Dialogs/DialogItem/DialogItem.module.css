@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a.activeLink {
+  color: gold;
+}
+
+.dialog {
+  font-size: 20px;
+}

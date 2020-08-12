@@ -1,0 +1,41 @@
+/* textarea {
+   width: 500px;
+} */
+.posts {
+  margin-top: 20px;
+}
+
+.addPost {
+  display: grid;
+  grid-template-columns: 400px 100px;
+  grid-gap: 30px;
+  align-self: start;
+  justify-self: start;
+}
+
+h3 {
+  color: white;
+}
+
+button {
+  border-radius: 10px;
+  border-color: cornflowerblue;
+  background-color: #65b8d5;
+  color: white;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: medium;
+  height: 40px;
+  align-self: center;
+}
+
+textarea {
+  border-radius: 10px;
+  border-color: cornflowerblue;
+  resize: none;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 400px;
+  color: black;
+}
