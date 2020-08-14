@@ -4,9 +4,9 @@
   grid-template-rows: 1fr 1fr 2fr;
 
   grid-template-areas:
-    "d m"
-    "d m"
-    "d ad";
+    'd m'
+    'd m'
+    'd ad';
 }
 
 .addmessage {
@@ -27,7 +27,7 @@
   border-color: cornflowerblue;
   background-color: #65b8d5;
   color: white;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: bold;
   font-size: medium;
   height: 40px;
