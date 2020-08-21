@@ -1,42 +1,46 @@
-const UPDATE_NEW_MES_TEXT = "UPDATE-NEW-MES-TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
+const UPDATE_NEW_MES_TEXT = 'UPDATE-NEW-MES-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
 
 let initialState = {
   dialogsData: [
-    { id: 1, name: "Ярослав" },
-    { id: 2, name: "Руслан" },
-    { id: 3, name: "Анастасия" },
-    { id: 4, name: "Данил" },
-    { id: 5, name: "Татьяна" },
+    { id: 1, name: 'Ярослав' },
+    { id: 2, name: 'Руслан' },
+    { id: 3, name: 'Анастасия' },
+    { id: 4, name: 'Данил' },
+    { id: 5, name: 'Татьяна' },
   ],
 
   messagesData: [
     {
       id: 1,
-      message: "Привет! У меня есть ценная информация по поводу front-end разработки. Нужно??",
+      message: 'Привет! У меня есть ценная информация по поводу front-end разработки. Нужно??',
     },
-    { id: 2, message: "Привет, Серёга! Сейчас занят, но ссылку жду" },
-    { id: 3, message: "Океей, через пару минут кину!" },
-    { id: 4, message: "Когда свой проект-то закончишь?" },
+    { id: 2, message: 'Привет, Серёга! Сейчас занят, но ссылку жду' },
+    { id: 3, message: 'Океей, через пару минут кину!' },
+    { id: 4, message: 'Когда свой проект-то закончишь?' },
   ],
-  newMesText: "Soon",
+  newMesText: '',
 };
 
 const dialogReducer = (state = initialState, action) => {
+  let stateCopy;
+
   switch (action.type) {
     case UPDATE_NEW_MES_TEXT: {
-      state.newMesText = action.newText;
-      return state;
+      return { ...state, newMesText: action.newText };
     }
 
     case ADD_MESSAGE: {
       let newMessage = {
-        id: getMaxidMes(state),
+        id: getMaxidMes(state), // тут стоит state для нахождения maxId
+        messagesData: '',
         message: state.newMesText,
+        /**
+         * ? Надо урегулировать ситуацию со stateCopy
+         */
       };
-      state.messagesData.push(newMessage);
-      state.newMesText = "";
-      return state;
+
+      return { ...state, newMesText: '', messagesData: [...state.messagesData, newMessage] };
     }
 
     default:
@@ -56,6 +60,9 @@ const getMaxidMes = (state) => {
 
 export const addMesActionCreator = (text) => ({ type: ADD_MESSAGE, newText: text });
 
-export const updateNewMesTextActionCreator = (text) => ({ type: UPDATE_NEW_MES_TEXT, newText: text });
+export const updateNewMesTextActionCreator = (text) => ({
+  type: UPDATE_NEW_MES_TEXT,
+  newText: text,
+});
 
 export default dialogReducer;
